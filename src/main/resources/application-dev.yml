@@ -1,0 +1,25 @@
+#Application Start
+server:
+  port: 8881
+spring:
+  resources:
+    add-mappings: false
+## Mybatis Start
+mybatis:
+  mapperLocations: classpath:/mapper/*.xml
+#dynamicds DataSource
+dynamicds:
+  orgCodeHeader: orgCode
+  general:
+    maxPoolSize: 10
+    minIdle: 3
+    defaultTenant: base
+  tenants:
+    base:
+      url: jdbc:mysql://192.168.1.240/saas_yunchuang
+      userName: root
+      password: Abcd1234!@#$
+    jg1:
+      url: jdbc:mysql://192.168.1.240:3306/jg1
+      userName: root
+      password: Abcd1234!@#$

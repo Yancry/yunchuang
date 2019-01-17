@@ -1,0 +1,30 @@
+#Application Start
+server:
+  port: 8881
+spring:
+  #DataSource Start
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 5
+      max-active: 100
+      min-idle: 5
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      validation-query: SELECT 1 FROM DUAL
+      validation-query-timeout: 60000
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-connect-error-millis: 60000
+      min-evictable-idle-time-millis: 100000
+      username: root
+      password: 1234
+      url: jdbc:mysql://127.0.0.1/saas-yunchuang?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+  resources:
+    add-mappings: false
+## Mybatis Start
+mybatis:
+  mapperLocations: classpath:/mapper/*.xml
